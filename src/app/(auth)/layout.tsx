@@ -8,6 +8,8 @@ export default async function AuthLayout({
 }) {
   const { user } = await validateRequest();
 
+  console.log(user);
+
   if (user) redirect("/");
 
   return <>{children}</>;
