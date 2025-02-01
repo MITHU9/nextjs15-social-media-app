@@ -12,6 +12,8 @@ export async function login(
   credentials: LoginType
 ): Promise<{ error: string }> {
   try {
+    console.log(credentials);
+
     const { username, password } = loginSchema.parse(credentials);
 
     const existingUser = await prisma.user.findFirst({
